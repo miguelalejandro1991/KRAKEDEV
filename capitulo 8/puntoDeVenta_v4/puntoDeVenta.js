@@ -116,3 +116,4 @@ limpiar = function () {
     
 }
 /* SI TODO FUNCIONA, HACER UN PUSH */
+//usar 
