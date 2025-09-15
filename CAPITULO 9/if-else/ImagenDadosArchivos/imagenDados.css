@@ -18,7 +18,7 @@ body{
 .imagen{
     display: flex;
     flex:5;
- 
+    background-color: rgba(255, 255, 255, 0.9); 
     justify-content: center;
     align-items: center;
 }
@@ -75,4 +75,23 @@ body{
 }
 h1{
     font-size: 50px;
+}
+
+.info{
+    font-size: 40px;
+    color: blueviolet;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.datos{
+    
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 40px;
+
+}
+.resultado{
+    font-size: 30px;
+    color: rgb(255, 0, 0);
+    font-family: Arial, Helvetica, sans-serif;
 }
