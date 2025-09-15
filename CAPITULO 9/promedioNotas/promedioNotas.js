@@ -6,11 +6,14 @@ calcularPromedioNotas=function(){
     let promedio=calcularPromedio(nota1,nota2,nota3);
     document.getElementById("resultado").innerHTML=promedio.toFixed(2);
 
-    if(promedio>7){
-        document.getElementById("image").src="feliz.jpg";
+    if(promedio>8 && promedio<=10){
+        document.getElementById("image").src="super.jpg";
     }
-    else{
-        document.getElementById("image").src="triste.jpg";
+    else if(promedio>=5 && promedio<=8){
+        document.getElementById("image").src="naaa.png";
+    }
+    else if(promedio<5 && promedio>=0){
+        document.getElementById("image").src="malo.jpg";
     }
 
 }
