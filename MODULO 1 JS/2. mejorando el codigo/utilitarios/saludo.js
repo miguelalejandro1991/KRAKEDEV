@@ -8,6 +8,8 @@ saludar=function(){
     let mensajeBienvenida="Bienvenido"+" " +nombre+" "+apellido;
     mostrarTexto("lblResultado",mensajeBienvenida);
     mostarImagen("imgSaludo", "./imagenes/saludar.gif");
+    mostrarTextoEnCaja("txtNombre", " ");
+
    
 }
 recuperarTexto=function(idComponebte){
@@ -33,9 +35,12 @@ recuperarFloat=function(idComponente){
 }
 mostrarTexto=function(idComponente,mensaje){
     let componente=document.getElementById(idComponente);
-    componente.innerText=mensaje;
-    
+    componente.innerText=mensaje;       
 
+}
+mostrarTextoEnCaja=function(idComponente,mensaje){
+    let componente=document.getElementById(idComponente);
+    componente.value=mensaje;
 }
 mostarImagen=function(idComponente, rutaImagen){
     let componente=document.getElementById(idComponente);
