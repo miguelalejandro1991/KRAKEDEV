@@ -4,7 +4,10 @@ calcularPromedioNotas=function(){
     let nota2=parseFloat(document.getElementById("nota2").value);
     let nota3=parseFloat(document.getElementById("nota3").value);
     let promedio=calcularPromedio(nota1,nota2,nota3);
+    let AR=parseFloat(document.getElementById("AR").value);
     document.getElementById("resultado").innerHTML=promedio.toFixed(2);
+
+    
 
     if(promedio>8 && promedio<=10){
         document.getElementById("image").src="super.jpg";
@@ -15,6 +18,19 @@ calcularPromedioNotas=function(){
     else if(promedio<5 && promedio>=0){
         document.getElementById("image").src="malo.jpg";
     }
+
+    if(promedio>8 && promedio<=10){
+        document.getElementById("AR").innerHTML="EXCELENTE";
+    }
+    else if(promedio>=5 && promedio<=8){
+        document.getElementById("AR").innerHTML="BUEN TRABAJO";
+    }
+    else if(promedio<5 && promedio>=0){
+        document.getElementById("AR").innerHTML="REPROBADO";
+    }
+
+
+
 
 }
 limpiarFormulario=function(){
