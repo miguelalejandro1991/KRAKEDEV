@@ -106,12 +106,14 @@ esNotaValida = function (nota, idComponenteError) {
         mostrarTexto(idComponenteError, "DEBE INGRESAR UN NÚMERO VÁLIDO");
         hayErrores = true;
     }
-        if (nota >= 0 || nota <= 10) {
-            mostrarTexto(idComponenteError, "");
-            hayErrores = false;
+    if (nota >= 0 || nota <= 10) {
+        mostrarTexto(idComponenteError, "");
+        hayErrores = true;
+    }
+    if (!hayErrores == false) {
+        mostrarTexto(idComponenteError, "");
+    }
+    return !hayErrores;
 
 
-        }
-
-    
 }
