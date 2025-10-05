@@ -1,0 +1,3 @@
+validarEstructura=function(placa){
+
+}
