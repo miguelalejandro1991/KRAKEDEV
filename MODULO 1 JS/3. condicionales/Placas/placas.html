@@ -1,11 +1,49 @@
+<!-- /*Crear la página html, con los componentes necesarios para probar la página al
+momento.
+Una label Ingrese la placa
+Una caja de texto para ingresar la placa
+Un botón VALIDAR
+Un label para mostrar si la placa es VALIDA o INCORRECTA
+Un label para mostrar los errores de validación*/ 
+
+En la página html, agregar los componentes necesarios para mostrar la
+información de provincia. -->
+
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Placas</title>
-        <script src="utilitariosCadenas.js"></script>
-        <script src="placas.js"></script>
-        <script src="serviciosPlacas.js"></script>
-        <link rel="stylesheet" href="placas.css">
-    </head>
-    <body></body>
+
+<head>
+    <title>Placas</title>
+    <script src="utilitariosCadenas.js"></script>
+    <script src="placas.js"></script>
+    <script src="serviciosPlacas.js"></script>
+    <link rel="stylesheet" href="placas.css">
+</head>
+
+<body>
+
+    <div class="principal">
+        <div class="titulo">
+            <h1>VALIDAR PLACA ECUATORIANA</h1>
+        </div>
+        <div class="caja">
+            <div class="placa">
+                <h3>INGRESE LA PLACA</h3>
+            </div>
+            <div class="cajaTexto">
+                <input type="text" id="placa" maxlength="8" placeholder="ABC-1234">
+            </div>
+            <div class="botones">
+                <button onclick="validaPlaca()">VALIDAR</button>
+                <button onclick="limpiar()">LIMPIAR</button>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+</body>
+
 </html>
