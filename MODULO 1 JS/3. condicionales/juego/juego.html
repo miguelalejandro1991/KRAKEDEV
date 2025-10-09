@@ -16,9 +16,9 @@
             <h1>JUEGA PIEDRA PAPEL O TIJERA</h1>
         </div>
         <div class="botones">
-            <input type="image" src="./imagenes/piedra.png" width="200px" class="estiloBoton" onclick="jugar(2);" />
-            <input type="image" src="./imagenes/papel.png" width="200px" class="estiloBoton" onclick="jugar(2);" />
-            <input type="image" src="./imagenes/tijeras.png" width="200px" class="estiloBoton" onclick="jugar(2);" />
+            <input type="image" src="./imagenes/piedra.png" width="200px" class="estiloBoton" onclick="jugar('piedra');" />
+            <input type="image" src="./imagenes/papel.png" width="200px" class="estiloBoton" onclick="jugar('papel');" />
+            <input type="image" src="./imagenes/tijeras.png" width="200px" class="estiloBoton" onclick="jugar('tijeras');" />
 
 
         </div>
@@ -27,10 +27,12 @@
             <h2 id="puntuacionUsuario">0</h2>
             <h2> PUNTAJE COMPUTADOR:</h2>
             <h2 id="puntuacionComputador">0</h2>
-            <h2 id="mensajeResultado">JUEGA!</h2>
+            <h2 id="lblResultado">RESULTADO</h2>
+
         </div>
-        <div class ="computador">
-            <img class="compu" id="imgComputador" src="./imagenes/e308f97a2d5505e33e276ba90a6846c91.jpg" width="200px"/>
+        <div class="computador">
+            <img class="compu" id="imgComputador" src="./imagenes/e308f97a2d5505e33e276ba90a6846c91.jpg"
+                width="200px" />
         </div>
 
 

@@ -28,9 +28,13 @@ generarElemento=function(){
 retorna 0 si empatan, 1 si gana el jugador 1, 2 si gana el jugador 2*/
 
 determinarGanador=function(jugador1, jugador2){
+    //console.log(jugador1 +" "+jugador2);
     if(jugador1==jugador2){
         return 0;
-    } else if((jugador1=="piedra" && jugador2=="tijera") || (jugador1=="papel" && jugador2=="piedra") || (jugador1=="tijera" && jugador2=="papel")){
+    } else if(
+        (jugador1==="piedra" && jugador2==="tijera") ||
+        (jugador1==="papel" && jugador2==="piedra") ||
+        (jugador1==="tijera" && jugador2==="papel")){
         return 1;
     } else{
         return 2;
@@ -48,7 +52,7 @@ generarRuta=function(nombre){
     } else if(nombre=="papel"){
         return "./imagenes/papel.png";
     } else{
-        return "./imagenes/tijera.png";
+        return "./imagenes/tijeras.png";
     }
 
 }
