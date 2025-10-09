@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>PIEDRA, PAPEL, TIJERAS</title>
-        <link href="juego.css" rel="stylesheet" />
-        <script src="juego.js"></script>
-        <script src="serviciosJuego.js"></script>
-    </head>
-    <body>
-        <div class="principal">
-            <div class="espacio"></div>
-            <div class="imagen">
-                <h1 id="lblNumero">?</h1>
-            </div>
-            <div class="botones">
-                <input type="button" value="PIEDRA" class="estiloBoton" onclick="jugar(1);" />
-                <input type="button" value="PAPEL" class="estiloBoton" onclick="jugar(2);" />
-                <input type="button" value="TIJERAS" class="estiloBoton" onclick="jugar(3);" />
-            </div>
+
+<head>
+    <title>PIEDRA, PAPEL, TIJERAS</title>
+    <link href="juego.css" rel="stylesheet" />
+    <script src="juego.js"></script>
+    <script src="serviciosJuego.js"></script>
+</head>
+
+<body>
+    <div class="principal">
+        <div class="espacio"></div>
+        <div class="imagen">
+            <h1>JUEGA PIEDRA PAPEL O TIJERA</h1>
+        </div>
+        <div class="botones">
+            <input type="image" src="./imagenes/piedra.png" width="200px" class="estiloBoton" onclick="jugar(2);" />
+            <input type="image" src="./imagenes/papel.png" width="200px" class="estiloBoton" onclick="jugar(2);" />
+            <input type="image" src="./imagenes/tijeras.png" width="200px" class="estiloBoton" onclick="jugar(2);" />
+
+
+        </div>
+        <div class="imagen">
+            <h1 id="lblResultado">?</h1>
             <div class="espacio"></div>
 
         </div>
+
 </html>
