@@ -6,12 +6,13 @@
     <link href="juego.css" rel="stylesheet" />
     <script src="juego.js"></script>
     <script src="serviciosJuego.js"></script>
+    <script src="utilitario.js"></script>
 </head>
 
 <body>
     <div class="principal">
         <div class="espacio"></div>
-        <div class="imagen">
+        <div class="titulo">
             <h1>JUEGA PIEDRA PAPEL O TIJERA</h1>
         </div>
         <div class="botones">
@@ -21,10 +22,16 @@
 
 
         </div>
-        <div class="imagen">
-            <h1 id="lblResultado">?</h1>
-            <div class="espacio"></div>
-
+        <div class="resultado">
+            <h2> TU PUNTAJE:</h2>
+            <h2 id="puntuacionUsuario">0</h2>
+            <h2> PUNTAJE COMPUTADOR:</h2>
+            <h2 id="puntuacionComputador">0</h2>
+            <h2 id="mensajeResultado">JUEGA!</h2>
         </div>
+        <div class ="computador">
+            <img class="compu" id="imgComputador" src="./imagenes/e308f97a2d5505e33e276ba90a6846c91.jpg" width="200px"/>
+        </div>
+
 
 </html>

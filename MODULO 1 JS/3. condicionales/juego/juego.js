@@ -5,7 +5,18 @@
 parametro seleccionado. si el resultado de determinarGanador es 0, muestra el mensaje "empate", si gana el usuario 
 muestra "ganaste" y si gana el computador muestra "perdiste".*/
 
+let puntuacionUsuario=0;
+let puntuacionComputador=0;
+
+
 jugar=function(seleccionado){
+    let numero=generarElemento();
+    let ruta=generarRuta(numero);
+    mostrarImagen("imgComputador", ruta);
+    let resultado=determinarGanador(seleccionado, numero);
+    
+
+
 
 }
 
