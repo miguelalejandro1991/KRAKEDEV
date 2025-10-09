@@ -14,12 +14,43 @@ correcta, invocar a obtenerProvincia, guardar el resultado en una variable. Si e
 obtenido no es null, mostrar la provincia en pantalla. Si es null, mostrar un mensaje
 provincia incorrecta.*/
 
-/* En placas.js, dentro de la función validarPlaca, solamente si la estructura es
-correcta, invocar a obtenerTipoVehiculo, guardar el resultado en una variable. Si el valor
-obtenido no es null, mostrar el tipo en pantalla. Si es null, mostrar un mensaje tipo de
-vehículo incorrecto
-*/
 
-validaPlaca=function(){
+validarPlaca = function () {
+    console.log("Dentro de validar")
+    let placa = document.getElementById("placa").value;
+    //console.log(placa)
+    let erroresEstructura = validarEstructura(placa);
+    if (!erroresEstructura) {
+        document.getElementById("placa").innerHTML = "ESTRUCTURA VALIDA";
+        let provincia = obtenerProvincia(placa);
+        let tipoVehiculo = obtenerTipoVehiculo(placa);
+        let diaPicoYPlaca = obtenerDiaPicoYPlaca(placa);
+        console.log(provincia);
+        console.log(tipoVehiculo);
+        console.log(diaPicoYPlaca);         
+        if (provincia) {
+            document.getElementById("provincia").innerHTML = "Provincia: " + provincia;
+            document.getElementById("tipoVehiculo").innerHTML = "Tipo de vehículo: " + tipoVehiculo;
+            document.getElementById("diaPicoYPlaca").innerHTML = "Día de pico y placa: " + diaPicoYPlaca;
+        } else {
+            document.getElementById("provincia").innerText = "Provincia incorrecta";
+        }
+    } else {
+        document.getElementById("estado").innerHTML = "estructura invalida";
+    }
+    document.getElementById("error").innerHTML = erroresEstructura;
+    return;
 
+}
+limpiar=function(){
+   
+    document.getElementById("tipoVehiculo").innerText = "";
+    document.getElementById("provincia").innerText = "";
+    document.getElementById("diaPicoYPlaca").innerText = "";
+    document.getElementById("estado").innerText = "";
+    document.getElementById("error").innerText = "";
+    
+    
+    
+    
 }

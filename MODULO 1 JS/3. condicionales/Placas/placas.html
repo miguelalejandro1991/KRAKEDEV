@@ -31,13 +31,22 @@ información de provincia. -->
                 <h3>INGRESE LA PLACA</h3>
             </div>
             <div class="cajaTexto">
-                <input type="text" id="placa" maxlength="8" placeholder="ABC-1234">
+                <input  type="text" id="placa" maxlength="8" placeholder="ABC-1234"/>
             </div>
             <div class="botones">
-                <button onclick="validaPlaca()">VALIDAR</button>
-                <button onclick="limpiar()">LIMPIAR</button>
+                <input  type="button" value="VALIDAR" onclick="validarPlaca();"/>
+                <input  type="button" value="LIMPIAR" onclick="limpiar();"/>
             </div>
         </div>
+
+        <p id="estado"></p>
+        <p id="error"></p>
+        <p id="provincia"></p>
+        <p id="tipoVehiculo"></p>
+        <p id="diaPicoYPlaca"></p>
+
+
+    
 
     </div>
 
