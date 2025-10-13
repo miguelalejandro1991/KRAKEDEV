@@ -67,5 +67,6 @@ contarMayusculas=function(cadena){
     let letra;
     for(let i=0; i<cadena.length;i++){
         letra=cadena.charAt(i);
+        esMayuscula(letra);
     }
 }
