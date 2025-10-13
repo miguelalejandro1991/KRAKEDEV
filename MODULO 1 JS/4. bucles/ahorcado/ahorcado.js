@@ -50,3 +50,26 @@ guardarPalabra = function () {
         console.log(palabraSecreta);
     }
 }
+
+/*crear la funcion mostrarLetra.
+Muestra la letra que recibe como parámetro en alguno de los
+siguientes componentes:
+div0, div1, div2, div3, div4
+Usando el siguiente criterio: si la posicion es 0, muestra en el
+div0, si la posicion es 1, muestra en el div1, y así sucesivamente.
+no retorna nada*/
+
+mostrarLetra=function(letra, posicion){
+    if(posicion==0){
+        mostrarTexto("div0",letra);
+    } else if(posicion==1){
+        mostrarTexto("div1",letra);
+    } else if(posicion==2){
+        mostrarTexto("div2",letra);
+    } else if(posicion==3){
+        mostrarTexto("div3",letra);
+    } else if(posicion==4){
+        mostrarTexto("div4",letra);
+    }
+
+}
