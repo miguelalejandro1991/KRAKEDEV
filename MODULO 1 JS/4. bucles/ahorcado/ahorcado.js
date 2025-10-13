@@ -124,6 +124,11 @@ IngresarLetra=function(){
 
 }
 
+/*crear la funcion mostrarAhorcado
+Si errores es igual a 1, mostrar la imagen ahorcado1.jpg, si es 2
+mostrar ahorcado2.jpg y así sucesivamente.
+no retorna nada */
+
 
 
 
