@@ -1,9 +1,16 @@
-esMayuscula=function(caracter){
-    if(caracter.charCodeAt(0) >= 65 && caracter.charCodeAt(0) <= 90){
+let palabraSecreta = " ";
+let intentos = 0;
+let coincidencias = 0;
+let errores = 0;
+
+
+
+esMayuscula = function (caracter) {
+    if (caracter.charCodeAt(0) >= 65 && caracter.charCodeAt(0) <= 90) {
         return true
-    }else{
+    } else {
         return false
-    } 
+    }
 
 }
 
@@ -19,14 +26,27 @@ no retorna nada
 Probar que se muestra en consola la palabra ingresada
 */
 
-guardarPalabra=function(){
+guardarPalabra = function () {
     let palabraIngresada;
-    palabraIngresada=recuperarTexto("txtSecreta");
-    if(palabraIngresada.length!=5){
-        alert("Debe ingresar una palabra de 5 letras mayusculas");
-        return;
-        console.log("La palabra ingresada es: "+palabraIngresada);
-        
-    }
+    palabraIngresada = recuperarTexto("txtSecreta");
+    let esValida = true;
+    let error = " ";
+    if (palabraIngresada.length == 5) {
+        for (let i = 0; i < palabraIngresada.length; i++) {
+            // console.log(esMayuscula(palabraIngresada[i]))
+            if (!esMayuscula(palabraIngresada[i])) {
+                esValida = false;
+                alert("La palabra debe contener solo letras mayusculas");
+                break;
+            }
+        }
 
+    } else {
+        esValida = false;
+        alert("La palabra debe tener 5 letras");
+    }
+    if(esValida){
+        palabraSecreta = palabraIngresada;        
+        console.log(palabraSecreta);
+    }
 }
