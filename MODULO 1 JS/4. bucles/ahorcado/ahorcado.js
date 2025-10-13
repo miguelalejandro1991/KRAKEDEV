@@ -107,18 +107,18 @@ a la función validar, caso contrario muestra un alert SOLO SE
 ACEPTAN MAYUSCULAS y no invoca a validar.
 no retorna nada*/
 
-IngresarLetra=function(){
+IngresarLetra = function () {
     let letraIngresada;
-    letraIngresada =(document.getElementById("txtLetra").value).toUpperCase();
+    letraIngresada = (document.getElementById("txtLetra").value).toUpperCase();
     intentos++;
     validar(letraIngresada);
     mostrarAhorcado();
-    if(intentos==10){
-        alert("has perdido, la palabra secreta era: "+palabraSecreta);
+    if (intentos == 10) {
+        alert("has perdido, la palabra secreta era: " + palabraSecreta);
     }
-    if(coincidencias==5){
+    if (coincidencias == 5) {
         alert("Felicidades, has ganado");
-        document.getElementById("ahorcadoImagen").src ="ganador.gif";
+        mostrarImagen("ahorcadoImagen", "ganador.gif");
     }
 
 
@@ -128,6 +128,34 @@ IngresarLetra=function(){
 Si errores es igual a 1, mostrar la imagen ahorcado1.jpg, si es 2
 mostrar ahorcado2.jpg y así sucesivamente.
 no retorna nada */
+
+mostrarAhorcado = function () {
+    if (errores == 1) {
+        mostrarImagen("ahorcadoImagen", "ahorcado_01.png");
+    } else if (errores == 2) {
+        mostrarImagen("ahorcadoImagen", "ahorcado_02.png");
+
+    } else if (errores == 3) {
+        mostrarImagen("ahorcadoImagen", "ahorcado_03.png");
+    } else if (errores == 4) {
+        mostrarImagen("ahorcadoImagen", "ahorcado_04.png");
+    } else if (errores == 5) {
+        mostrarImagen("ahorcadoImagen", "ahorcado_05.png");
+    } else if (errores == 6) {
+        mostrarImagen("ahorcadoImagen", "ahorcado_06.png");
+    } else if (errores == 7) {
+        mostrarImagen("ahorcadoImagen", "ahorcado_07.png");
+    } else if (errores == 8) {
+        mostrarImagen("ahorcadoImagen", "ahorcado_08.png");
+    } else if (errores == 9) {
+        mostrarImagen("ahorcadoImagen", "ahorcado_09.png");
+    } else if (errores == 10) {
+        mostrarImagen("ahorcadoImagen", "ahorcado_10.png");
+    }
+    if (intentos == 10) {
+        mostrarImagen("ahorcadoImagen", "gameOver.gif");
+    }
+}
 
 
 
