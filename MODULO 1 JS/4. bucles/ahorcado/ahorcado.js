@@ -45,8 +45,8 @@ guardarPalabra = function () {
         esValida = false;
         alert("La palabra debe tener 5 letras");
     }
-    if(esValida){
-        palabraSecreta = palabraIngresada;        
+    if (esValida) {
+        palabraSecreta = palabraIngresada;
         console.log(palabraSecreta);
     }
 }
@@ -59,17 +59,47 @@ Usando el siguiente criterio: si la posicion es 0, muestra en el
 div0, si la posicion es 1, muestra en el div1, y así sucesivamente.
 no retorna nada*/
 
-mostrarLetra=function(letra, posicion){
-    if(posicion==0){
-        mostrarTexto("div0",letra);
-    } else if(posicion==1){
-        mostrarTexto("div1",letra);
-    } else if(posicion==2){
-        mostrarTexto("div2",letra);
-    } else if(posicion==3){
-        mostrarTexto("div3",letra);
-    } else if(posicion==4){
-        mostrarTexto("div4",letra);
+mostrarLetra = function (letra, posicion) {
+    if (posicion == 0) {
+        mostrarTexto("div0", letra);
+    } else if (posicion == 1) {
+        mostrarTexto("div1", letra);
+    } else if (posicion == 2) {
+        mostrarTexto("div2", letra);
+    } else if (posicion == 3) {
+        mostrarTexto("div3", letra);
+    } else if (posicion == 4) {
+        mostrarTexto("div4", letra);
     }
 
 }
+
+/* crear la funcion validar.
+Agregar una variable local llamada letrasEncontradas, su
+objetivo es contar cuantas letras encontró.
+Se barre uno a uno todos los caracteres de la palabra secreta y
+en cada iteración verifica si coincide con la letra que recibe
+como parámetro.
+Si son iguales llama a mostrarLetra, la posición en la que debe
+mostrar es la posición en la que encontró la variable. Además
+incrementar la variable letrasEncontradas en 1.
+no retorna nada*/
+
+validar = function (letra) {
+    let letrasEncontradas = 0;
+    for (let i = 0; i < palabraSecreta.length; i++) {
+
+        if (letra == palabraSecreta[i]) {
+            letrasEncontradas++;
+            mostrarLetra(letra, i);
+        }
+    }
+    if (!palabraSecreta.includes(letra)) {
+        alert("la letra" + letra + "no se encuentra en la palabra secreta");
+        errores++;
+    }
+
+}
+
+
+
