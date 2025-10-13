@@ -101,5 +101,30 @@ validar = function (letra) {
 
 }
 
+/*Crear la función que será invocada desde el botón VALIDAR
+Toma la letra de la caja de texto. Si la letra es mayúscula invoca
+a la función validar, caso contrario muestra un alert SOLO SE
+ACEPTAN MAYUSCULAS y no invoca a validar.
+no retorna nada*/
+
+IngresarLetra=function(){
+    let letraIngresada;
+    letraIngresada =(document.getElementById("txtLetra").value).toUpperCase();
+    intentos++;
+    validar(letraIngresada);
+    mostrarAhorcado();
+    if(intentos==10){
+        alert("has perdido, la palabra secreta era: "+palabraSecreta);
+    }
+    if(coincidencias==5){
+        alert("Felicidades, has ganado");
+        document.getElementById("ahorcadoImagen").src ="ganador.gif";
+    }
+
+
+}
+
+
+
 
 
