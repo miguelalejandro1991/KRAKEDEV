@@ -14,4 +14,17 @@ y agregar este valor al arreglo.
 3. Crear una función mostrarResultados, que recibe un parámetro llamado arregloNumeros. La función muestra el arreglo
  en la pantalla, generando una tabla de forma dinámica.
 4. En la función generarAleatorios, al salir del for, invocar a la función mostrarResultados.
-5. Probar el funcionamiento*/ 
+5. Probar el funcionamiento*/
+
+
+
+generarNumeroAleatorio=function(){
+    let numeroAleatorio=Math.floor(Math.random()*100)+1;
+    return numeroAleatorio;
+    
+}
+
+generarAleatorios=function(){
+    let aleatorios=[];
+    
+}
