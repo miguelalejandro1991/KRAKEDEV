@@ -18,13 +18,36 @@ y agregar este valor al arreglo.
 
 
 
-generarNumeroAleatorio=function(){
-    let numeroAleatorio=Math.floor(Math.random()*100)+1;
+generarNumeroAleatorio = function () {
+    let numeroAleatorio = Math.floor(Math.random() * 100) + 1;
     return numeroAleatorio;
-    
+
 }
 
-generarAleatorios=function(){
-    let aleatorios=[];
-    
+generarAleatorios = function () {
+    let aleatorios = [];
+    let numeroUsuario = recuperarInt("txtNombre");
+    let numeroSeleccionado = parseInt(numeroUsuario);
+    if (numeroSeleccionado >= 5 && numeroSeleccionado <= 20) {
+        for (let i = 0; i < numeroSeleccionado; i++) {
+            console.log(i);
+            let numeroGenerado = parseInt(generarNumeroAleatorio());
+            aleatorios.push(numeroGenerado);
+        }
+        mostrarResultados(aleatorios);
+
+    } else {
+        alert("El número debe estar entre 5 y 20");
+    }
+
+}
+mostrarResultados = function (arregloNumeros) {
+    let divResultados = document.getElementById("resultados");
+    let tabla = "<table border='1'><tr>";
+    for (let i = 0; i < arregloNumeros.length; i++) {
+        tabla += "<td>" + arregloNumeros[i] + "</td>";
+
+    }
+    tabla += "</tr></table>";
+    divResultados.innerHTML = tabla
 }
