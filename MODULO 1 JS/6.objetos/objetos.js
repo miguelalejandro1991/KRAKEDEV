@@ -37,9 +37,70 @@ crearProducto = function () {
     }
     console.log(producto1.nombre);
     console.log(producto2.precio);
-    if (producto1.stock > producto2.stock){
+    if (producto1.stock > producto2.stock) {
         console.log("Producto 1 tiene mayor stock");
-    }else {producto1.stock < producto2.stock
+    } else {
+        producto1.stock < producto2.stock
         console.log("Producto 2 tiene mayor stock");
     }
+}
+modificarAtributos = function () {
+    let cuenta = {
+        numero: "45698214478",
+        saldo: "0.0"
+    }
+    cuenta.saldo = 100;
+    cuenta.saldo += 10;
+    console.log(cuenta.saldo);
+}
+crearCliente = function () {
+    let cliente = {
+        cedula: "1758962",
+        nombre: "juan"
+    }
+    let cliente1 = {}
+    cliente1.nombre = "grace";
+    cliente1.apellido = "rodriguez";
+    cliente1.cedula = "545645254";
+    console.log(cliente1.nombre);
+
+}
+
+probarIncrementoSaldo=function(){
+    let cta={
+        numero: "25554",
+        saldo: "34.0"        
+    }
+    incrementarSaldo(cta,100);
+    console.log(cta.saldo);
+}
+probarIncrementarMayor=function(){
+    let per1={
+        nombre: "daniel",
+        edad: "45"
+    }
+    let per2 ={
+        nombre: "luisa",
+        edad: "48"
+    }
+    let mayor;
+    mayor=determinarMayor(per1,per2);
+    if(mayor != null){
+        console.log("el mayor es:" +mayor.nombre);
+    }
+
+}
+
+incrementarSaldo = function (cuenta, monto) {
+    cuenta.saldo += monto;
+}
+determinarMayor = function (persona1, persona2) {
+    if (persona1.edad > persona2.edad) {
+        return persona1;
+    } else if (persona2.edad > persona1.edad) {
+        return persona2;
+    }else{
+        return null;
+    }
+
 }
