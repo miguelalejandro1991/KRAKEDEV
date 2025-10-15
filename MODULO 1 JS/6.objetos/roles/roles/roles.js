@@ -16,21 +16,7 @@ const deshabilitarOpciones = () => {
     deshabilitarComponente('btnGuardar');
 }
 
-const mostrarOpcionEmpleado = () => {
-    mostrarEmpleado();
-    deshabilitarOpciones();
-    mostrarComponente('divEmpleado');
-    ocultarComponente('divRol');
-    ocultarComponente('divResumen');
-}
 
-const mostrarOpcionRol = () => {
-    ocultarComponente('divEmpleado');
-    mostrarComponente('divRol');
-    ocultarComponente('divResumen');
-    deshabilitarComponente('btnGuardarRol');
-    
-}
 
 const mostrarOpcionResume = () => {
     ocultarComponente('divEmpleado');
