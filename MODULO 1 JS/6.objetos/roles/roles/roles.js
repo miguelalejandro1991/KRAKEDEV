@@ -25,6 +25,21 @@ const mostrarOpcionResume = () => {
     monstrarRol()
     mostrarTotales()
 }
+const mostrarOpcionEmpleado = () => {
+    mostrarEmpleado();
+    deshabilitarOpciones();
+    mostrarComponente('divEmpleado');
+    ocultarComponente('divRol');
+    ocultarComponente('divResumen');
+}
+
+const mostrarOpcionRol = () => {
+    ocultarComponente('divEmpleado');
+    mostrarComponente('divRol');
+    ocultarComponente('divResumen');
+    deshabilitarComponente('btnGuardarRol');
+    
+}
 
 const mostrarEmpleado = () => {
     let tabla = '<table><tr><th>Cedula</th><th>Nombre</th><th>Apellido</th><th>Sueldo</th></tr>';
