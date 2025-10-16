@@ -254,4 +254,55 @@ const guardarRol = () => {
 };
 
 
-//
+//Mostrar rol RESUMEN ---------------------------------------------------------
+
+const monstrarRol = () =>{
+    let tabla = '<table><tr><th>Cedula</th><th>Nombre</th><th>Valor_a_pagar</th><th>Aporte empleado</th><th>Aporte empleador</th></tr>';
+    let elemento;
+    for (let i = 0; i < roles.length; i++) {
+        elemento = roles[i];
+        tabla +=
+            '<tr>' +
+            '<td>' + elemento.cedula + '</td>' +
+            '<td>' + elemento.nombre + '</td>' +
+            '<td>' + elemento.valorAPagar + '</td>' +
+            '<td>' + elemento.aporteEmpleado + '</td>' +
+            '<td>' + elemento.aporteEmpleador + '</td>' +
+            '</tr>'
+    }
+    tabla += '</table>'
+    document.getElementById('tablaResumen').innerHTML = tabla;
+}
+
+const mostrarTotales = () =>{
+    let totalAPagar = 0.0;
+    let totalEmpleador = 0.0;
+    let totalEmpleao = 0.0;
+    let existe = false
+    let totalNomina = 0.0
+    
+    if(roles){
+        existe = true
+        
+    }else{
+        alert('No existe un rol registrado')
+    }
+
+    if(existe){
+        for(let i=0; i<roles.length; i++){
+            totalAPagar += parseFloat(roles[i].valorAPagar);
+            totalEmpleador += parseFloat(roles[i].aporteEmpleado);
+            totalEmpleao += parseFloat(roles[i].aporteEmpleador);
+        }
+    }
+
+    mostrarTexto('infoTotalPago', totalAPagar.toFixed(2));
+    mostrarTexto('infoAporteEmpleado', totalEmpleador.toFixed(2));
+    mostrarTexto('infoAporteEmpresa', totalEmpleao.toFixed(2));
+
+    totalNomina = parseFloat(totalAPagar+totalEmpleador+totalEmpleador)
+    mostrarTexto('infoTotalNomina', totalNomina.toFixed(2));
+
+}
+
+//roles.js
