@@ -46,3 +46,19 @@ function agregarPersona() {
 
 }
 
+/*PARTE 2- MOSTRAR PERSONAS
+Muestra una tabla en pantalla con todas las personas del arreglo, el orden de las
+columnas es: EDAD NOMBRE
+La tabla se debe mostrar apenas se carga la página (evento onload, en el body)
+La tabla se debe refrescar cada vez que se agrega una persona
+Agregar estilos a la tabla
+*/
+function mostrarPersonas() {
+    let tabla = `<table border="1">
+    <tr>
+        <th>EDAD</th>
+        <th>NOMBRE</th>
+    </tr>`;
+}
+
+
