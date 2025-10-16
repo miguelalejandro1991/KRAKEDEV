@@ -1,18 +1,40 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <script src="orden.js"></script>
-        <script src="utilitarios.js"></script>
-        <link rel="stylesheet" href="estilos.css">
-        <title>Ordenar</title>
-    </head>
-    <body>
-         <h1>REGISTRO DE USUARIOS</h1>
-         <input type="text" id ="txtNombre"/>
-         <input type="text" id ="txtEdad"/>
-         <input type="button" value="GUARDAR"/>
-         
-         <div id="divErrores"></div>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro usuarios</title>
+    <link rel="stylesheet" href="orden.css" />
+    <script src="utilitarios.js"></script>
+    <script src="orden.js"></script>
+  </head>
+  <body onload="crearUsuarioTabla()">
+    <div class="container">
+      <!-- Inputs -->
+       <h1>Registro de usuarios</h1>
+      <div class="inputs">
+        <div>
+            <input type="text" placeholder="Nombre" id="name" />
+            <p class="error" id="error_name"></p>
+        </div>
+        <div>
+            <input type="text" placeholder="Edad" id="age" />
+            <p class="error" id="error_age"></p>
+        </div>
+        <button onclick="registrarUsuario()">Agregar</button>
+      </div>
 
-    </body>
+      <!-- Tabla -->
+      <div id="tablaUsuarios">
+
+      </div>
+
+      <!-- Botones -->
+      <div class="actions">
+        <button onclick="buscarMayor()">Calcular Mayor</button>
+        <button onclick="buscarMenor()">Calcular Menor</button>
+        <!-- <button>Guardar</button> -->
+      </div>
+    </div>
+  </body>
 </html>

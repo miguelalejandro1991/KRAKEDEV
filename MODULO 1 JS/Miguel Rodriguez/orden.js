@@ -1,64 +1,115 @@
-let = [
-    { identificacion: 0, nombre: "Marcos", edad: "18", },
-    { identificacion: 1, nombre: "Roberto", edad: "15", },
-    { identificacion: 2, nombre: "Kate", edad: "25", },
-    { identificacion: 3, nombre: "Diana", edad: "12", },
-    { identificacion: 4, nombre: "Benja", edad: "5", },
-
+let usuarios = [
+    {id: 0, name: 'Marcos', age: 18},
+    {id: 1, name: 'Roberto', age: 15},
+    {id: 2, name: 'Kate', age: 25},
+    {id: 3, name: 'Diana', age: 12},
+    {id: 4, name: 'Benja', age: 5}
 ];
+let id = 5;
+const errors = [{
+    error_length: '*Almenos 3 caracteres',
+    error_empy: '*El campo es obligatorio',
+    error_noNumber: '*Solo se aceptan numeros'
+}]
 
-let identificacion = 5;
-
-/*Crear una función agregarPersona, no recibe parámetros y realiza la siguiente
-lógica:
-a. Toma de la pantalla el nombre de la persona, valida que tenga al menos 3
-caracteres, si no cumple la condición muestra el error en pantalla
-b. Toma de la pantalla la edad de la persona, valida que sea un entero entre 0 y
-C.
-100, si no cumple la condición muestra el error en pantalla
-Solamente si pasa todas las validaciones:
-i. Crea un objeto nuevaPersona, sin atributos.
-ii. Agrega a nuevaPersona los atributos nombre y edad al objeto, con los
-valores recuperados de la pantalla
-iii. Agrega el objeto al arreglo personas
-iv. Muestra un alert PERSONA AGREGADA CORRECTAMENTE*/
-
-function agregarPersona() {
-    let nombre = recuperarTexto("txtNombre");
-    let edad = recuperarInt("txtEdad");
-    if (nombre.length <= 3) {
-        mostrarTexto("divErrores", "El nombre debe tener al menos 3 caracteres");
-        return;
-    }     
-    if (isNaN(edad) || edad < 0 || edad > 100) {
-        mostrarTexto("divErrores", "La edad debe ser un número entre 0 y 100");
-        return;
+const validarNombre = (user) => {
+    let validation = false;
+    
+    if(user){
+        mostrarTexto('error_name', '')
+        if(user.length < 3){
+            mostrarTexto('error_name', errors[0].error_length)
+            return validation
+        }else{
+            validation = true;
+            return validation
+        }
+        
+    }else{
+        mostrarTexto('error_name', errors[0].error_empy)
+        return validation
     }
-    let nuevaPersona = {};
-    nuevaPersona.identificacion = identificacion;
-    nuevaPersona.nombre = nombre;
-    nuevaPersona.edad = edad;
-    personas.push(nuevaPersona);
-    identificacion++;
-    mostrarTexto("divErrores", "");
-    mostrarPersonas();
-    alert("PERSONA AGREGADA CORRECTAMENTE");
-
 }
 
-/*PARTE 2- MOSTRAR PERSONAS
-Muestra una tabla en pantalla con todas las personas del arreglo, el orden de las
-columnas es: EDAD NOMBRE
-La tabla se debe mostrar apenas se carga la página (evento onload, en el body)
-La tabla se debe refrescar cada vez que se agrega una persona
-Agregar estilos a la tabla
-*/
-function mostrarPersonas() {
-    let tabla = `<table border="1">
-    <tr>
-        <th>EDAD</th>
-        <th>NOMBRE</th>
-    </tr>`;
+const validarEdad = (age) =>{
+    let validation = false;
+    let edad = parseInt(age)
+
+    if(edad){
+        mostrarTexto('error_age', '')
+        if( typeof edad == 'string'){
+            mostrarTexto('error_age', errors[0].error_noNumber)
+            return validation
+        }else{
+            validation = true;
+            return validation
+        }
+        
+    }else{
+        mostrarTexto('error_age', errors[0].error_empy)
+        return validation
+    }
 }
 
+const registrarUsuario = () => {
+    const userInput = recuperarTexto('name').trim();
+    const ageInput = recuperarTexto('age').trim();
 
+    const user = userInput.charAt(0).toUpperCase()+userInput.slice(1).toLowerCase();
+    const age = ageInput.charAt(0).toUpperCase()+ageInput.slice(1).toLowerCase();
+
+    let isTrueUser = validarNombre(user)
+    let isTrueAge = validarEdad(age)
+    
+    if(isTrueUser && isTrueAge){
+        alert('Usuario agregado correctamente')
+        usuarios.push({
+            id: id+=1,
+            name: user,
+            age: age
+        })
+        console.log(usuarios)
+        crearUsuarioTabla()
+
+    }
+}
+
+const crearUsuarioTabla = () =>{
+    let tabla = '<table><thead><tr><th>Id</th><th>Nombre</th><th>Edad</th></tr></thead>'
+    for(let i=0; i<usuarios.length; i++){
+        tabla+='<tbody><tr>'+
+        '<td>'+usuarios[i].id+'</td>'+
+        '<td>'+usuarios[i].name+'</td>'+
+        '<td>'+usuarios[i].age+'</td>'
+    }
+    tabla+='</tr></tbody></table>'
+    document.getElementById('tablaUsuarios').innerHTML = tabla;
+}
+
+const buscarMayor = () =>{
+    let personaMayor;
+    
+    for(let i=0; i<usuarios.length; i++){
+        let personaActual = usuarios[0].age
+        if(personaActual < usuarios[i].age){
+            personaActual = usuarios[i]
+            personaMayor = personaActual
+        }
+    }
+    alert('La persona mayor es: '+personaMayor.name+' con '+personaMayor.age+' años.')
+    //console.log(personaMayor)
+}
+
+const buscarMenor = () =>{
+    let personaMenor;
+    
+    for(let i=0; i<usuarios.length; i++){
+        let personaActual = usuarios[0].age
+        if(personaActual > usuarios[i].age){
+            personaActual = usuarios[i]
+            personaMenor = personaActual
+        }
+    }
+    alert('La persona menor es: '+personaMenor.name+' con '+personaMenor.age+' años.')
+    //console.log(personaMayor)
+}
